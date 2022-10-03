@@ -12,3 +12,7 @@ h3{
     color:green;
     text-transform: uppercase;
 }
+.close{
+    float:right;
+    color:red;
+}

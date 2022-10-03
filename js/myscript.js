@@ -365,13 +365,13 @@ function $(selector){
 }
 //se modifica el myAlert
 function myAlert(msg){
-    //console.log($("body").children[1]);
     var div = document.createElement("div");
     div.classList.add("alert");
     div.innerHTML = msg;
     //se añaden las cositas
     var close = document.createElement("span");
-    close.style.float = "right";
+    //esto debería ir en el css .close
+    //close.style.float = "right";
     close.classList.add("close");
     close.innerHTML = "X";
     div.appendChild(close);
