@@ -123,7 +123,37 @@ console.log(third_array[1]);
 console.log(fourth_array[4][0]);
 console.log(fourth_array.length);
 
-//Array push, añadir
+//Array push, añadir al final
 console.log(fourth_array.push("Spain"));
 console.log(fourth_array);
 
+//Array unshift
+//añade al principio
+fourth_array.unshift(1);
+console.log(fourth_array);
+
+//FOR/FOREACH
+/*for(var i = 0; i<fourth_array.length; i++){
+    console.log("Entramos en la iteración de "+fourth_array[i]);
+}
+*/
+//este es más óptimo 
+//porque empieza desde el ultimo, no espera a ver cuántos elementos hay
+/*
+for(var i = fourth_array.length-1; i >= 0; i--){
+    console.log("Entramos en la iteración de "+fourth_array[i]);
+}
+*/
+//más óptimo aún
+/*
+var i = fourth_array.length-1;
+for(;i>=0;i--){
+    console.log("Entramos en la iteracion de: "+fourth_array[i])
+}
+*/
+//foreach
+/*
+fourth_array.forEach(function(element){
+    console.log("Iteracion "+element)
+})
+*/
