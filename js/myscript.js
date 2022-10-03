@@ -308,7 +308,7 @@ function $(selector){
 }
 */
 /*
-//crear muchos inputs usando solo 1
+//Crear muchos inputs usando solo 1
 $("#btn_2").addEventListener("click",function(){
     var input = document.createElement("input");
     input.setAttribute("type","email");
@@ -321,3 +321,73 @@ function $(selector){
     return document.querySelector(selector);
 }
 */
+//AÑADIR UNA NUEVA FUNCION DE ALARMA
+/*
+$("#btn_2").addEventListener("click",function(){
+    var input = document.createElement("input");
+    input.setAttribute("type","email");
+    input.setAttribute("placeholder","E-mail");
+    input.setAttribute("name","emails");
+    $("#form").appendChild(input);
+    myAlert("Add new email input");
+});
+
+function $(selector){
+    return document.querySelector(selector);
+}
+//creamos funcion nueva
+function myAlert(msg){
+    //en el div crea el elemento
+    var div = document.createElement("div");
+    //ese div es de clase alert
+    div.classList.add("alert");
+    //inserta el mensaje dentro del div del html
+    div.innerHTML = msg;
+    //estamos en el body
+    //asi que añadimos antes del primer hijo del body
+    //inserBefore, lo que se quiere meter, luego dónde se quiere meter
+    //es decir arriba del todo
+    $("body").insertBefore(div,$("body").firstChild);
+}
+*/
+
+//AÑADIR BOTONCITO DE CERRAR
+$("#btn_2").addEventListener("click",function(){
+    var input = document.createElement("input");
+    input.setAttribute("type","email");
+    input.setAttribute("placeholder","E-mail");
+    input.setAttribute("name","emails");
+    $("#form").appendChild(input);
+    myAlert("Add new email input");
+});
+function $(selector){
+    return document.querySelector(selector);
+}
+//se modifica el myAlert
+function myAlert(msg){
+    //console.log($("body").children[1]);
+    var div = document.createElement("div");
+    div.classList.add("alert");
+    div.innerHTML = msg;
+    //se añaden las cositas
+    var close = document.createElement("span");
+    close.style.float = "right";
+    close.classList.add("close");
+    close.innerHTML = "X";
+    div.appendChild(close);
+    $("body").insertBefore(div,$("body").firstChild);
+    bind_close();
+}
+
+function bind_close(){
+    //seleccionar todos los elementos con la clase close
+    let elements = document.querySelectorAll(".close");
+    //recorrer esos elementos con con for decreciente optimo
+    for(var i=elements.length-1;i>=0;i--){
+        let el = elements[i];
+        el.addEventListener("click",function(){
+            this.parentNode.style.display = "none";
+        });
+    }
+}
+
