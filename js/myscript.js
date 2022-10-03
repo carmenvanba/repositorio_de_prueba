@@ -157,3 +157,167 @@ fourth_array.forEach(function(element){
     console.log("Iteracion "+element)
 })
 */
+//if/else/elseif
+/*
+let aux = 3;
+if(aux > 0){
+    console.log("This number is positive");
+}else if(aux <0 ){
+    console.log("This number is negative");
+}else{
+    console.log("This number is 0");
+}
+*/
+
+//Regular expressions
+//match, encontrar patrón dentro de otra cosa
+//dni.match(/^(\d{8})([A-Z])$/) pero mejor en una variable
+/*
+var DNI_REGEX = /^(\d{8})([A-Z])$/;
+let dni = "12345678K";
+if(dni.match(DNI_REGEX)){
+    console.log("Correct DNI");
+}else{
+    console.log("Incorrect DNI");
+}
+*/
+
+//Operadores de comparación
+//=== valor y tipo
+/*
+console.log(8==8);
+console.log(8=="8");
+console.log(8===8);
+console.log(8==="8");
+
+console.log(5>8);
+console.log(5<8);
+console.log(5>=8);
+console.log(5<=8);
+
+console.log(8!=8);
+console.log(8!="8");
+console.log(8!==8);
+console.log(8!=="8");
+
+console.log("text" == "text");
+console.log("text" === "text");
+console.log("text" == "Text");
+*/
+
+//Loop while
+/*
+var i = 1;
+while (i < 10){
+    console.log("The number is "+i);
+    i++;
+    //i termina en 10
+}
+*/
+//Switch el ultimo no lleva break y no hace falta poner default
+
+//DATE OBJECT
+//meses 0 enero 11 diciembre
+let today = new Date();
+let first_october = new Date(2019,10,1);
+console.log(today);
+console.log(first_october);
+console.log(today.getDay());
+console.log(today.getDate());
+//comparar fechas
+if(today>first_october){
+    console.log("Today is after to first october");
+}else{
+    console.log("Today is before to first october");
+}
+
+//EVENTOS
+function myFirstFunction(){
+    console.log("Thank you for your click.");
+}
+function mySecondFunction(){
+    console.log("Thank you for your interest.");
+}
+
+//Select DOM
+/*
+//se accede a todos los my_div del html
+var div = document.getElementById("my_div");
+//a ese div se le añade una clase, my_class
+div.classList.add("my_class");
+console.log(div);
+//se ha añadido dinamicamente una clase a un div
+*/
+
+//Select DOM II
+/*
+var div = document.getElementsByTagName("div");
+console.log(div);
+//para acceder con id es # y con clase el .
+var second_div = document.querySelector("#my_second_div");
+console.log(second_div);
+//CREAR una funcion que se llama $ y se le pasa un selector
+//devuelve del documento todos los que cumplan el selector
+function $(selector){
+    return document.querySelectorAll(selector);
+}
+console.log($("#my_third_div"));
+console.log($(".div_especial"));
+*/
+
+//FUNCIONES
+/*
+function $(selector){
+    return document.querySelectorAll(selector);
+}
+console.log($("#my_third_div"));
+//pasar una funcion por otra funcion
+//elevar cada numero a 2 (multiplicarlo por si mismo 1 vez)
+var numbers = [1,2,3,4];
+var n_elevator_2 = numbers.map(function(n){ return n*n; });
+console.log(n_elevator_2);
+*/
+//Lo mismo, pero mas simple, funciones flecha:
+/*
+var numbers = [1,2,3,4];
+var n_elevator_2 = numbers.map((n)=>{ return n*n; });
+console.log(n_elevator_2);
+//same y pinta numero a numero antes del cambio
+var n_elevator_2 = numbers.map((n)=>{ console.log(n); return n*n; });
+console.log(n_elevator_2);
+//same
+var n_elevator_2 = numbers.map(n => n*n);
+console.log(n_elevator_2);
+*/
+/*
+//multiplica
+let numbers = [[1,2],[2,3],[3,4],[4,5]];
+let itself = numbers.map(([x,y]) => x*y);
+console.log(itself);
+*/
+
+//Create DOM NODES I
+/*
+$("#btn_2").addEventListener("click",function(){
+    var input = document.createElement("input");
+    console.log(input);
+});
+
+function $(selector){
+    return document.querySelector(selector);
+}
+*/
+/*
+//crear muchos inputs usando solo 1
+$("#btn_2").addEventListener("click",function(){
+    var input = document.createElement("input");
+    input.setAttribute("type","email");
+    input.setAttribute("placeholder","E-mail");
+    input.setAttribute("name","emails");
+    $("#form").appendChild(input);
+});
+
+function $(selector){
+    return document.querySelector(selector);
+}
+*/
