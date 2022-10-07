@@ -1,4 +1,4 @@
-//alert("Hello to js");
+alert("Hello to js");
 //console.log("CHAVALERIA");
 //console.log para que salga en consola
 
@@ -233,7 +233,8 @@ if(today>first_october){
 
 //EVENTOS
 function myFirstFunction(){
-    console.log("Thank you for your click.");
+    //console.log("Thank you for your click.");
+    window.location.reload();
 }
 function mySecondFunction(){
     console.log("Thank you for your interest.");
